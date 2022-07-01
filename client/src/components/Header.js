@@ -1,0 +1,30 @@
+import { IoMdBasket } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
+function Header({ toggleSideCart }) {
+  // Navigation to other pages
+  let navigate = useNavigate();
+
+  return (
+    <div className="header">
+      <img
+        className="logo-flavr"
+        alt="Flavr logo"
+        onClick={() => navigate("/")}
+        src="data:image/png;base64,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"
+      />
+      <p className="header-logo-text">fulfilled by</p>
+      <img
+        alt="Sainsbury's logo"
+        className="logo-sainsburys"
+        src="https://app.flavrfood.com/static/media/sainsburys.a85527e1.svg"
+      />
+      <div className="fill"></div>
+      <div className="basket-button">
+        <IoMdBasket onClick={() => toggleSideCart()} className="basket-icon" />
+      </div>
+    </div>
+  );
+}
+
+export default Header;
